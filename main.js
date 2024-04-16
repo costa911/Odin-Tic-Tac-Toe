@@ -15,7 +15,7 @@ const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
 const restartButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
-let circleTurn
+let circleTurn = false
 
 startGame()
 
@@ -44,6 +44,7 @@ function handleClick(e){
     }else{
         swapTurns()
         setBoardHoverClass()
+        changeTurn()
     }
 }
 
@@ -89,3 +90,12 @@ function checkWin(currentClass){
     })
 }
 
+function changeTurn(){
+    if(circleTurn){
+        document.getElementById('playerO').classList.add('active');
+        document.getElementById('playerX').classList.remove('active');
+    } else {
+        document.getElementById('playerX').classList.add('active');
+        document.getElementById('playerO').classList.remove('active');
+    }
+}
