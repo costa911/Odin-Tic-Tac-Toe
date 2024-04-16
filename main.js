@@ -17,7 +17,16 @@ const restartButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
 let circleTurn = false
 
-startGame()
+const welcomeScreen = document.getElementById('welcomeScreen');
+const startGameButton = document.getElementById('startGameButton');
+
+startGameButton.addEventListener('click', () => {
+    welcomeScreen.style.display = 'none'; // Hide welcome screen
+    board.style.display = 'grid'; // Show game board
+    startGame(); // Start the game
+});
+
+startGame();
 
 restartButton.addEventListener('click', startGame)
 
@@ -39,9 +48,9 @@ function handleClick(e){
     placeMark(cell, currentClass)
     if (checkWin(currentClass)){
         endGame(false)
-    }else if(isDraw()){
+    } else if(isDraw()){
         endGame(true)
-    }else{
+    } else{
         swapTurns()
         setBoardHoverClass()
         changeTurn()
@@ -51,7 +60,7 @@ function handleClick(e){
 function endGame(draw){
     if (draw){
         winningMessageTextElement.innerText = 'Draw!'
-    }else{
+    } else{
         winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
     }
     winningMessageElement.classList.add('show')
@@ -77,7 +86,7 @@ function setBoardHoverClass(){
     board.classList.remove(CIRCLE_CLASS)
     if (circleTurn){
         board.classList.add(CIRCLE_CLASS)
-    }else{
+    } else{
         board.classList.add(X_CLASS)
     }
 }
