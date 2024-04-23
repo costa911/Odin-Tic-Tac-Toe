@@ -23,6 +23,7 @@ const startGameButton = document.getElementById('startGameButton');
 startGameButton.addEventListener('click', () => {
     welcomeScreen.style.display = 'none'; // Hide welcome screen
     board.style.display = 'grid'; // Show game board
+    document.querySelector('.turn-container').style.display = 'grid';
     startGame(); // Start the game
 });
 
@@ -39,7 +40,7 @@ function startGame(){
         cell.addEventListener('click', handleClick, {once: true})
     })
     setBoardHoverClass()
-    winningMessageElement.classList.remove('show')
+    winningMessageElement.classList.remove('show');
 }
 
 function handleClick(e){
