@@ -11,6 +11,12 @@
 
 body {
     margin: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent;
+    background-image: url(TicTacToeBG.jpeg);
+    background-size: cover;
 }
 
 .board {
@@ -27,7 +33,7 @@ body {
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
-    border: 1px solid black;
+    border: 1px solid whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,13 +69,13 @@ body {
 .cell.x::before,
 .cell.x::after,
 .cell.circle::before {
-    background-color: black;
+    background-color: whitesmoke;
 }
 
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::before {
-    background-color: lightgrey;
+    background-color: transparent;
 }
 
 .cell.x::before,
@@ -111,7 +117,7 @@ body {
 .board.circle .cell:not(.x):not(.circle):hover::after {
     width: calc(var(--mark-size) * .7);
     height: calc(var(--mark-size) * .7);
-    background-color: white;
+    background-color: transparent;
 }
 
 .winning-message {
@@ -165,7 +171,7 @@ body {
 }
 
 .turn-container .turn-box {
-    border: 3px solid #000;
+    border: 3px solid whitesmoke;
     font-size: 1.6rem;
     font-weight: 700;
 }
@@ -190,7 +196,7 @@ body {
 }
 
 .turn-box.active {
-    background-color: #ccc;
+    background-color: whitesmoke;
 }
 
 .board, .winning-message {
@@ -206,4 +212,33 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: whitesmoke;
+}
+#playerNames {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    position: absolute;
+    color: whitesmoke;
+    top: 50%; /* Position it at 50% from the top */
+    left: 50%; /* Position it at 50% from the left */
+    transform: translate(-50%, -50%); /* Center it precisely */
+}
+#scoreRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px; /* Adjust the distance from the bottom as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: whitesmoke;
+}
+
+#scoreRow span {
+    padding: 5px 10px;
+    background-color: black;
+    border-radius: 5px;
+    margin: 0 5px; /* Adjust the spacing between elements */
 }
