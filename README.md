@@ -2,7 +2,7 @@
 This project is a simple implementation of the classic game Tic Tac Toe using HTML, CSS, and JavaScript. This project is from the Odin Project curriculum which can be found here; https://www.theodinproject.com/ 
 
 Overview
-Tic Tac Toe, also known as noughts and crosses or Xs and Os, is a game where two players take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+Tic Tac Toe, also known as noughts and crosses or Xs and Os, is a game where two players take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game. https://costa911.github.io/Odin-Tic-Tac-Toe/ 
 
 Features
 Two-player mode: Play against a friend locally.
